@@ -9,19 +9,20 @@ notes.get('/', (req, res) =>
 
 // POST Route for submitting notes
 notes.post('/', (req, res) => {
+    console.log(req.body)
   // Destructuring assignment for the items in req.body
-  const { noteTitle, noteText } = req.body;
+  const { title, text } = req.body;
 
   // If all the required properties are present
-  if (noteTitle && noteText) {
+  if (title && text) {
     // Variable for the object we will save
     const newNote = {
-      noteTitle,
-      noteText,
+      title,
+      text,
       note_id: uuidv4(),
     };
-
-    readAndAppend(newFeedback, './db/db.json');
+    console.log(newNote)
+    readAndAppend(newNote, './db/db.json');
 
     const response = {
       status: 'success',
