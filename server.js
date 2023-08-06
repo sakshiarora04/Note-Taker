@@ -1,10 +1,10 @@
-const express = require('express');
-const path = require('path');
-const { clog } = require('./middleware/clog');
+const express = require('express'); // Import Express.js
+const path = require('path'); // Import built-in Node.js package 'path' to resolve path of files that are located on the server
+const { clog } = require('./middleware/clog'); //middleware for displaying message
 const api = require('./routes/index.js');
-
+// Specify on which port the Express.js server will run
 const PORT = process.env.PORT || 3001;
-
+// Initialize an instance of Express.js
 const app = express();
 
 // Import custom middleware, "cLog"
@@ -14,7 +14,7 @@ app.use(clog);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
-
+// Static middleware pointing to the public folder
 app.use(express.static('public'));
 
 // GET Route for homepage
