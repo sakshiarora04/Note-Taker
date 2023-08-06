@@ -84,7 +84,7 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).note_id;
-console.log(activeNote.note_id,noteId)
+
   if (activeNote.note_id === noteId) {
     activeNote = {};
   }
@@ -98,8 +98,7 @@ console.log(activeNote.note_id,noteId)
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
-  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  console.log(activeNote);
+  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));  
   renderActiveNote();
 };
 
