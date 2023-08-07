@@ -14,7 +14,8 @@
 
 ## Installation
 
-To run locally, Clone the Repository from GitHub
+To run locally, 
+1. Clone the Repository from GitHub
    ```
    git clone git@github.com:sakshiarora04/Note-Taker.git
    ```
