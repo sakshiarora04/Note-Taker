@@ -32,7 +32,7 @@ const getNotes = () =>
       'Content-Type': 'application/json',
     },
   });
-
+//save note and send new note in body
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -49,7 +49,7 @@ const deleteNote = (id) =>
       'Content-Type': 'application/json',
     },
   });
-
+//render selected note
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
@@ -65,7 +65,7 @@ const renderActiveNote = () => {
     noteText.value = '';
   }
 };
-
+//handle entered value
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
